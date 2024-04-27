@@ -1,0 +1,67 @@
+class HelloWorld {
+    public static void main(String[] args) {
+        
+       int array[] = {3,7,8,9,10,11};
+       int k=3 ;
+       int len= array.length;
+       String dir="left";
+       
+       
+           if(dir.equals("right"))
+           {
+               int right[] =new int[k];
+               int ind=0;
+               for(int j=len-k;j<len;j++)
+               {
+                   right[ind++]=array[j];
+               }
+               
+               for(int j=len-k-1;j>=0;j--)
+               {
+                    array[j+k]=array[j];
+               }
+               
+               for(int j=0;j<k;j++)
+               {
+                   array[j]=right[j];
+               }
+               
+               for(int j=0;j<array.length;j++)
+               {
+                  System.out.println(array[j]); 
+               }
+           }
+           
+           
+           else
+           {
+               int left[] =new int[k];
+               int ind=0;
+               for(int j=0;j<k;j++)
+               {
+                   left[j]=array[j];
+               }
+
+               
+              for(int j=len-k;j<len;j++)
+              {
+                    array[ind++]=array[j];
+                     
+              }
+              
+              int index=0;
+              for(int j=len-k;j<len;j++)
+              {
+    
+                  array[j]=left[index++];
+              }
+               
+              for(int j=0;j<array.length;j++)
+              {
+                  System.out.println(array[j]); 
+              }
+           }
+       
+        
+    }
+}
